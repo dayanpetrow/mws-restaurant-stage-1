@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Normalize.css for better cross-browser consistency -->
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <!-- Main CSS file -->
@@ -27,25 +28,32 @@
 
   <!-- Beginning main -->
   <main id="maincontent">
-    <!-- Beginning map -->
-    <section id="map-container">
-      <div id="map"></div>
-    </section>
-    <!-- End map -->
-    <!-- Beginning restaurant -->
-    <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
-      <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
-    </section>
-    <!-- end restaurant -->
-    <!-- Beginning reviews -->
-    <section id="reviews-container">
-      <ul id="reviews-list"></ul>
-    </section>
-    <!-- End reviews -->
+    <div class="container">
+      <!-- Beginning map -->
+      <div class="column map-col">
+        <section id="map-container">
+          <div id="map"></div>
+        </section>
+      </div>
+      <!-- End map -->
+      <!-- Beginning restaurant -->
+      <div class="column content-col">
+        <section id="restaurant-container">
+          <h1 id="restaurant-name"></h1>
+          <img id="restaurant-img">
+          <p id="restaurant-cuisine"></p>
+          <p id="restaurant-address"></p>
+          <table id="restaurant-hours"></table>
+        </section>
+        <!-- end restaurant -->
+        <!-- Beginning reviews -->
+        <section id="reviews-container">
+          <ul id="reviews-list"></ul>
+        </section>
+        <!-- End reviews -->
+      </div>
+    </div>
+
   </main>
   <!-- End main -->
 
@@ -61,8 +69,9 @@
   <!-- Main javascript file -->
   <script type="text/javascript" src="js/restaurant_info.js"></script>
   <!-- Google Maps -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_tKbW6A5pQ-eupxI56myUnHLqYCzOjKo&libraries=places&callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQL7Ki3wWLC_WmCDc3Q42ZEZ8NflG0tnw&libraries=places&callback=initMap"></script>
   <!-- End scripts -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
 </body>
 

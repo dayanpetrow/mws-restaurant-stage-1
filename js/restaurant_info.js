@@ -117,21 +117,49 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
+  const reviewHead = document.createElement('div');
+  reviewHead.className = "review-header";
+  li.appendChild(reviewHead);
+  const reviewBody = document.createElement('div');
+  reviewBody.className = "review-body";
+  li.appendChild(reviewBody);
+
   const name = document.createElement('p');
+  name.className = "name";
   name.innerHTML = review.name;
-  li.appendChild(name);
+  reviewHead.appendChild(name);
 
   const date = document.createElement('p');
+  date.className = "date";
   date.innerHTML = review.date;
-  li.appendChild(date);
+  reviewHead.appendChild(date);
 
+
+
+
+
+  const stars = parseInt(review.rating);
   const rating = document.createElement('p');
-  rating.innerHTML = `Rating: ${review.rating}`;
-  li.appendChild(rating);
+  rating.innerHTML = `Rating: ${review.rating}/5`;
+  if (stars == 5) {
+    rating.className = "rating excellent";
+  } else if (stars == 4) {
+    rating.className = "rating verygood";
+  } else {
+    rating.className = "rating"
+  }
+
+  reviewBody.appendChild(rating);
+  for(let i = 0; i < stars; i++) {
+    const star = document.createElement('i');
+    star.className = "fas fa-star";
+    rating.appendChild(star);
+  }
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
-  li.appendChild(comments);
+  comments.className = "comments";
+  reviewBody.appendChild(comments);
 
   return li;
 }
